@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Style -->
+
+    <head>
+
+        <!-- Default format -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Title -->
+        <title>เบื่อโว้ย ไม่อยากเรียนแล้วโว้ย</title>
+
+        <!-- Boostrap -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+        crossorigin="anonymous"
+        />
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Gluten">
+
+        <!-- Style -->
+        <style>
+            .nav-container {
+                position: fixed;
+                padding: 0;
+                display: flex;
+            }
+
+            /* Trapezoid Box Style */
+            .nav-title-box {
+                position: absolute;
+                width: 360px;
+                height: 100px;
+                background-image: url('https://cdn.discordapp.com/attachments/939618238898253856/939633709429162084/unknown.png');
+            }
+
+            .title-box-trapezoid {
+                margin-left: 30px;
+                transform: skew(-30deg, 0deg);
+
+                border-color: #ffd900;
+                border-width: 3px;
+                border-style: none solid solid none;
+            }
+
+            .nav-title {
+                position: absolute;
+                padding: 4px 8px 8px 32px;
+                font-family: "Brush Script MT", cursive;
+                font-size: 56px;
+                background: linear-gradient(180deg, #fffb00 0%, #d48a00 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                -webkit-animation: glow 2s ease-in-out infinite alternate;
+                -moz-animation: glow 2s ease-in-out infinite alternate;
+                animation: glow 2s ease-in-out infinite alternate;
+            }
+
+            @-webkit-keyframes glow {
+                from {
+                  text-shadow: 0 0 10px rgba(255, 208, 0, 0.2), 0 0 20px rgba(255, 208, 0, 0.2), 0 0 30px rgba(255, 208, 0, 0.2), 0 0 40px rgba(255, 208, 0, 0.2), 0 0 50px rgba(255, 208, 0, 0.2), 0 0 60px rgba(255, 208, 0, 0.2), 0 0 70px rgba(255, 208, 0, 0.2);
+                }
+                to {
+                  text-shadow: 0 0 10px rgba(255, 208, 0, 0.7), 0 0 20px rgba(255, 208, 0, 0.7), 0 0 30px rgba(255, 208, 0, 0.7), 0 0 40px rgba(255, 208, 0, 0.7), 0 0 50px rgba(255, 208, 0, 0.7), 0 0 60px rgba(255, 208, 0, 0.7), 0 0 70px rgba(255, 208, 0, 0.7);
+                }
+              }
+
+            /* Content */
+            .nav-bar {
+                margin-left: 400px;
+                height: 100px;
+                display: flex;
+            }
+
+            .nav-content {
+                position: relative;
+                width: 200px;
+                height: 64px;
+            }
+
+            .nav-content-container {
+                position: absolute;
+                width: 200px;
+                height: 64px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .nav-content-trapezoid {
+                position: absolute;
+                width: 200px;
+                height: 64px;
+                transform: skew(-30deg, 0deg);
+
+                background-image: url('https://cdn.discordapp.com/attachments/939618238898253856/939633709429162084/unknown.png');
+                border-color: #ffd900;
+                border-width: 2px;
+                border-style: none solid solid none;
+                color: #ffd900;
+                font-weight: bold;
+            }
+
+            .nav-text {
+                color: #ffd900;
+                font-weight: bold;
+            }
+
+            .nav-button {
+                position: absolute;
+                width: 200px;
+                height: 64px;
+                transform: skew(-30deg, 0deg);                
+            }
+
+            .nav-button span {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: block;
+                box-sizing: border-box;
+            }
+
+            .nav-button span:nth-child(1) {
+                width: 200px;
+                height: 64px;
+                transform:rotate(0deg);
+            }
+
+            .nav-button span:nth-child(2) {
+                margin: -68px 68px;
+                width: 64px;
+                height: 200px;
+                transform:rotate(90deg);
+            }
+
+            .nav-button span:nth-child(3) {
+                width: 200px;
+                height: 64px;
+                transform:rotate(180deg);
+            }
+
+            .nav-button span:nth-child(4) {
+                margin: -68px 66px;
+                width: 64px;
+                height: 200px;
+                transform:rotate(270deg);
+            }
+
+            .nav-button span:before{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 3px;
+                background: linear-gradient(180deg, #ff9900 0%, #ffae00 100%);
+                box-shadow: 0 0 8px rgba(255, 208, 0, 0.7), 0 0 8px rgba(255, 208, 0, 0.7);
+                animation: animate 3s linear infinite;
+            }
+
+            @keyframes animate {
+                0% {
+                    transform:scaleX(0);
+                    transform-origin: left;
+                }
+                50% {
+                    transform:scaleX(1);
+                    transform-origin: left;
+                }
+                50.1% {
+                    transform:scaleX(1);
+                    transform-origin: right;
+                  
+                }
+                100% {
+                    transform:scaleX(0);
+                    transform-origin: right;
+                }
+            } 
+
+            .main-content {
+                display: flex;
+                flex-direction: column;
+                align-items:center;
+                padding: 100px 0 0 0;
+            }
+
+            .main-content div{
+                width: 100%; 
+                height: 100%;
+            }
+
+            .pic {
+                opacity: 1;
+                -webkit-transition: .3s ease-in-out;
+                transition: .1s ease-in-out;
+            }
+            .pic:hover {
+                opacity: .3;
+            }
+                
+            [ id = "62010465"]{
+                  background-image: url(https://cdn.discordapp.com/attachments/814157782152118322/939567152615276544/softStuBG.jpg);
+            }
+            
+            .maleText{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between
+            }
+            
+            [ id = "62010465"] p{
+                color: rgb(146, 146, 146);
+                font-size: 16px;
+            }
+            
+            [ id = "62010465"] p i{
+                color: white;
+                font-size: 30px;
+                text-shadow: 1px 1px 1px #000000;
+            }
+            
+            .rowed{
+                display: flex;
+                justify-content: space-evenly;
+                padding-right: 5%;
+            }
+            
+            .rowed img{
+                width: 30%;
+                padding-bottom: 0%;
+            }
+                  
+            .maleT1{
+                padding-right: 2%;
+            }
+            
+            .rahas{
+                padding-bottom: 20px;
+                padding-left: 20px;
+                padding-top: 10px;
+                color: white;
+                text-shadow: 1px 1px 1px #000000;
+            }
+            
+            .miniRowed{
+                display: flex;
+                padding-bottom: 20px;
+            }
+            
+            .miniColumed{
+                display: flex;
+                flex-direction: column;
+            }
+            
+            #maleCard{
+                color: rgb(115, 141, 117);
+            }
+            
+            .maleContract{
+                padding-top: 2%;
+            }
+            
+            .maleContract img{
+                 width: 4%;
+            }
+            
+            .maleContract img:hover{
+                opacity: 0.3;
+            }
+                  
+            [ id = "62010465"] img{
+                padding-top: 10px;
+            }
+            
+            [ id = "62010494"] {
+                display: flex;
+                flex-direction: row;
+                background-image: url('https://partner.sunmi.com/assets/images/login/bg_dark.jpg');
+            }
+              
+            [ id = "62010494"] h2 ,[ id = "62010494"] h3,[ id = "62010494"] p,[ id = "62010494"] li{
+                color :white;
+             }
+
+            .pure-container {
+                width: 100%;
+                min-height: 900px;
+                display: grid;
+                grid-template-columns: 480px 1420px;
+                grid-row: 900px;
+                background-color: rgb(0, 0, 0);
+            }
+
+            .pure-controller-container {
+                margin: auto;
+                display: grid;
+                grid-template-rows: 40px 380px 40px 440px;
+                justify-content: center;
+                align-items: center;
+
+                background-color: rgb(37, 37, 37);
+                border-color: rgb(170, 170, 170);
+                border-style: none solid none none;
+                border-width: 2px;
+            }
+
+            .pure-controller {
+                padding-top: 70px;
+                display: grid;
+                grid-template-columns: 100px 100px 100px;
+                grid-template-rows: 100px 100px 100px;
+
+                border-color: rgb(0, 255, 13);
+                border-style: solid;
+                border-width: 2px;
+            }
+
+            .pure-controller div {
+                border-color: rgb(255, 0, 0);
+                border-style: solid;
+                border-width: 2px;
+            }
+
+        </style>
+    </head>
+
+    <!-- Element -->
+    <body>
+        <!-- Nav bar -->
+        <div class="container-fluid nav-container">
+
+            <!-- Nav Trapezoid Title -->
+            <div class="nav-title-box"></div>
+            <div class="nav-title-box title-box-trapezoid"></div>
+            <div>
+                <p class="nav-title">Software Studio</p>
+            </div>
+
+            <!-- Nav Content -->
+            <nav class="nav-bar">
+                <div class="nav-content">
+                    <div class="nav-content-trapezoid"></div>
+                    <div class="nav-content-container">
+                        <span class="nav-text">
+                            62010052
+                        </span>
+                    </div>
+                    <a
+                        class="nav-button"
+                        href="#62010052"
+                        onmouseover="nav_border_on_1()"
+                        onmouseout="nav_border_off_1()"
+                        >
+                        <span class="nav-button-effect-1" style="visibility: hidden;"></span>
+                        <span class="nav-button-effect-1" style="visibility: hidden;"></span>
+                        <span class="nav-button-effect-1" style="visibility: hidden;"></span>
+                        <span class="nav-button-effect-1" style="visibility: hidden;"></span>
+                    </a>
+                </div>
+
+                <div class="nav-content">
+                    <div class="nav-content-trapezoid"></div>
+                    <div class="nav-content-container">
+                        <span class="nav-text">
+                            62010285
+                        </span>
+                    </div>
+                    <a
+                        class="nav-button"
+                        href="#62010285"
+                        onmouseover="nav_border_on_2()"
+                        onmouseout="nav_border_off_2()"
+                        >
+                        <span class="nav-button-effect-2" style="visibility: hidden;"></span>
+                        <span class="nav-button-effect-2" style="visibility: hidden;"></span>
+                        <span class="nav-button-effect-2" style="visibility: hidden;"></span>
+                        <span class="nav-button-effect-2" style="visibility: hidden;"></span>
+                    </a>
+                </div>
+
+                <div class="nav-content">
+                    <div class="nav-content-trapezoid"></div>
+                    <div class="nav-content-container">
+                        <span class="nav-text">
+                            62010453
+                        </span>
+                    </div>
+                    <a
+                        class="nav-button"
+                        href="#62010453"
+                        onmouseover="nav_border_on_3()"
+                        onmouseout="nav_border_off_3()"
+                        >
+                        <span class="nav-button-effect-3" style="visibility: hidden;"></span>
+                        <span class="nav-button-effect-3" style="visibility: hidden;"></span>
+                        <span class="nav-button-effect-3" style="visibility: hidden;"></span>
+                        <span class="nav-button-effect-3" style="visibility: hidden;"></span>
+                    </a>
+                </div>
+
+                <div class="nav-content">
+                    <div class="nav-content-trapezoid"></div>
+                    <div class="nav-content-container">
+                        <span class="nav-text">
+                            62010465
+                        </span>
+                    </div>
+                    <a
+                        class="nav-button"
+                        href="#62010465"
+                        onmouseover="nav_border_on_4()"
+                        onmouseout="nav_border_off_4()"
+                        >
+                        <span class="nav-button-effect-4" style="visibility: hidden;"></span>
+                        <span class="nav-button-effect-4" style="visibility: hidden;"></span>
+                        <span class="nav-button-effect-4" style="visibility: hidden;"></span>
+                        <span class="nav-button-effect-4" style="visibility: hidden;"></span>
+                    </a>
+                </div>
+
+                <div class="nav-content">
+                    <div class="nav-content-trapezoid"></div>
+                    <div class="nav-content-container">
+                        <span class="nav-text">
+                            62010494
+                        </span>
+                    </div>
+                    <a
+                        class="nav-button"
+                        href="#62010494"
+                        onmouseover="nav_border_on_5()"
+                        onmouseout="nav_border_off_5()"
+                        >
+                        <span class="nav-button-effect-5" style="visibility: hidden;"></span>
+                        <span class="nav-button-effect-5" style="visibility: hidden;"></span>
+                        <span class="nav-button-effect-5" style="visibility: hidden;"></span>
+                        <span class="nav-button-effect-5" style="visibility: hidden;"></span>
+                    </a>
+                </div>
+
+                <div class="nav-content">
+                    <div class="nav-content-trapezoid"></div>
+                    <div class="nav-content-container">
+                        <span class="nav-text">
+                            62010496
+                        </span>
+                    </div>
+                    <a
+                        class="nav-button"
+                        href="#62010496"
+                        onmouseover="nav_border_on_6()"
+                        onmouseout="nav_border_off_6()"
+                        >
+                        <span class="nav-button-effect-6" style="visibility: hidden;"></span>
+                        <span class="nav-button-effect-6" style="visibility: hidden;"></span>
+                        <span class="nav-button-effect-6" style="visibility: hidden;"></span>
+                        <span class="nav-button-effect-6" style="visibility: hidden;"></span>
+                    </a>
+                </div>
+
+                <!-- Script -->
+                <script>
+                    function nav_border_on_1() {
+                        const effect_element = document.getElementsByClassName("nav-button-effect-1");
+                        for (let i = 0; i < 4; i++) {
+                            effect_element[i].style.visibility = "visible";
+                        }
+                    }
+                    function nav_border_off_1() {
+                        const effect_element = document.getElementsByClassName("nav-button-effect-1");
+                        for (let i = 0; i < 4; i++) {
+                            effect_element[i].style.visibility = "hidden";
+                        }
+                    }
+
+                    function nav_border_on_2() {
+                        const effect_element = document.getElementsByClassName("nav-button-effect-2");
+                        for (let i = 0; i < 4; i++) {
+                            effect_element[i].style.visibility = "visible";
+                        }
+                    }
+                    function nav_border_off_2() {
+                        const effect_element = document.getElementsByClassName("nav-button-effect-2");
+                        for (let i = 0; i < 4; i++) {
+                            effect_element[i].style.visibility = "hidden";
+                        }
+                    }
+
+                    function nav_border_on_3() {
+                        const effect_element = document.getElementsByClassName("nav-button-effect-3");
+                        for (let i = 0; i < 4; i++) {
+                            effect_element[i].style.visibility = "visible";
+                        }
+                    }
+                    function nav_border_off_3() {
+                        const effect_element = document.getElementsByClassName("nav-button-effect-3");
+                        for (let i = 0; i < 4; i++) {
+                            effect_element[i].style.visibility = "hidden";
+                        }
+                    }
+
+                    function nav_border_on_4() {
+                        const effect_element = document.getElementsByClassName("nav-button-effect-4");
+                        for (let i = 0; i < 4; i++) {
+                            effect_element[i].style.visibility = "visible";
+                        }
+                    }
+                    function nav_border_off_4() {
+                        const effect_element = document.getElementsByClassName("nav-button-effect-4");
+                        for (let i = 0; i < 4; i++) {
+                            effect_element[i].style.visibility = "hidden";
+                        }
+                    }   
+
+                    function nav_border_on_5() {
+                        const effect_element = document.getElementsByClassName("nav-button-effect-5");
+                        for (let i = 0; i < 4; i++) {
+                            effect_element[i].style.visibility = "visible";
+                        }
+                    }
+                    function nav_border_off_5() {
+                        const effect_element = document.getElementsByClassName("nav-button-effect-5");
+                        for (let i = 0; i < 4; i++) {
+                            effect_element[i].style.visibility = "hidden";
+                        }
+                    }   
+
+                    function nav_border_on_6() {
+                        const effect_element = document.getElementsByClassName("nav-button-effect-6");
+                        for (let i = 0; i < 4; i++) {
+                            effect_element[i].style.visibility = "visible";
+                        }
+                    }
+                    function nav_border_off_6() {
+                        const effect_element = document.getElementsByClassName("nav-button-effect-6");
+                        for (let i = 0; i < 4; i++) {
+                            effect_element[i].style.visibility = "hidden";
+                        }
+                    }   
+                </script>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="container-fluid main-content">
+            
+            <div class="page-content" id="62010052">
+                <h2>62010052</h2>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi
+                consequatur nam earum inventore unde asperiores voluptate. Accusantium
+                atque suscipit placeat? Doloremque fugiat quia sapiente aliquid eaque
+                iure vel tempora? Mollitia.
+            </div>
+
+            <div class="container p-0 page-content" id="62010285">
+                <h1 class="fw-bold" style="font-family: Gluten; color:deeppink;">62010285</h1>
+                <div class="shadow row m-0 justify-content-around p-3">
+                    <div class="d-flex align-items-end">
+                        <img
+                            src="https://lv2-cdn.azureedge.net/itzy/0722616b57ef45499c09a60ea74c1286-WEB-MAINLOGO-b.png"
+                            width="70"
+                            class="me-3"
+                            />
+                        <div class="position-relative" style="top: -10px">
+                            JYP Entertainment
+                        </div>
+                    </div>
+                <div class="row px-0 py-3">
+                    <div class="d-flex justify-content-center col" style="width: 40%; ">
+                        <iframe
+                        
+                            src="https://www.youtube.com/embed/MjCZfZfucEc"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+
+                            width ="560"
+                            height="300"
+                        ></iframe>
+                    </div>
+
+                    <div class="col">
+                        <div class="h1 d-inline pe-1" style="font-family: Gluten;">CRAZY</div>
+                        <div class="h1 d-inline pe-1" style="font-family: Gluten; color:deeppink;">IN</div>
+                        <div class="h1 d-inline pe-3" style="font-family: Gluten;">LOVE</div>
+                        <div class="d-inline">Release Date 2021-09-24</div>
+                        <div class="my-3" style="text-indent: 2rem; text-align: justify">
+                            <p>
+                            - 3rd collaboration with hit-making music production team
+                            GALACTIKA *, to follow the success of “DALLA DALLA” and
+                            “WANNABE”
+                            </p>
+
+                            <p>
+                            - Title track “LOCO,” ITZY’s ‘crazy into you’ kind of love
+                            song! Spoken like a true gen Z, the lyrics captures that
+                            honest and instinctive gravitational pull towards love.
+                            </p>
+                            <p>
+                            - The FIRST full-length album we’ve all been desperately
+                            waiting for! ITZY eyes K-pop’s 2021 second half with a new
+                            lead single.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row p-0 py-4" style="text-indent: 2rem; text-align: justify">
+                    <p>
+                    ITZY will release their very first full-length album 〈CRAZY IN
+                    LOVE〉 on September 24th. A thrilling, highly-anticipated comeback
+                    with title track “LOCO” is scheduled to get a simultaneous worldwide
+                    release.
+                    </p>
+                
+                    <p>
+                    ITZY’s previous EP 〈GUESS WHO〉 with lead single “Mafia in the
+                    morning” saw much success on the charts since its unveiling on
+                    April 30th this year, landing on Billboard’s competitive main
+                    charts “Billboard 200” and “Artist 100” while outdoing the group’s
+                    previous record on global music platform Spotify’s “Global Top
+                    200.” Established now as a powerful performance-centric girl
+                    group, ITZY makes another big step towards the global stage with
+                    their first full-length album since debut 〈CRAZY IN LOVE〉.
+                    </p>
+                </div>
+
+                <div class="col me-3" style="text-indent: 2rem; text-align: justify">
+                    <p>
+                    On this album, ITZY members are still rooted in their signature
+                    self-assurance. But, we get an answer to the question… in the face
+                    of real love, how will these self-sufficient ladies react?
+                    </p>
+                    
+                    <p>
+                    They declare their love with explosive honesty, lyrically
+                    confessing “you take me halfway to crazy” and “oh gosh, this is
+                    the sweetest poison.” You’ll be able to witness a brand new side
+                    of the girls in the lead single “LOCO.”
+                    </p>
+                </div>
+
+                <div class="col ms-3" style="text-indent: 2rem; text-align: justify">
+                    <p>
+                    This is the third collaboration with the creators of hit tracks
+                    “DALLA DALLA” and “WANNABE.” With proven chemistry, anticipation
+                    runs high for another iconic song in collaboration with the music
+                    production team GALACTIKA * Their signature sounds including fusion
+                    groove, Latin dance, Moombahton, and Trap were infused to create a
+                    new ITZY-style
+                    </p>
+                    
+                    <p>
+                    Neo Fusion Groove genre. The Spanish word for crazy, ‘loco’ is the
+                    driving force behind the title track with the raw emotions of love
+                    encompassed musically.
+                    </p>
+                </div>
+
+                <div class="row align-items-center">
+                    <div class="col text-center">
+                        <p class="h4">TRACK LIST</p>
+
+                        1. LOCO<br />
+                        2. SWIPE<br />
+                        3. Sooo LUCKY<br />
+                        4. #Twenty<br />
+                        5. B[OO]M-BOXX<br />
+                        6. Gas Me Up<br />
+                        7. LOVE is<br />
+                        8. Chillin' Chillin'<br />
+                        9. Mirror<br />
+                        10. LOCO (English Ver.)<br />
+                        11. 달라달라 (Inst.)<br />
+                        12. ICY (Inst.)<br />
+                        13. WANNABE (Inst.)<br />
+                        14. Not Shy (Inst.)<br />
+                        15. 마.피.아. In the morning (Inst.)<br />
+                        16. LOCO (Inst.)<br />
+                    </div>
+
+                    <div class="col">
+                        <img
+                            src="https://lv2-cdn.azureedge.net/itzy/220939b337f146f8a75cc6cd0299cda5-ITZY_CRAZY%20IN%20LOVE_ONLINE%20COVER_%EC%B5%9C%EC%A2%85.jpg"
+                            class="w-100 p-3 rounded-circle"
+                        />
+                    </div>
+                </div>
+
+                <div class="row w-50 py-3 justify-items-center">
+                    <a class="col text-center pic" href="https://www.instagram.com/itzy.all.in.us/" target="_blank">
+                    <img
+                        src="https://itzy.jype.com/Content/Pc/images/common/sns_instagram_b.png"
+                        class="w-75"
+                    />
+                    </a>
+                    <a  class="col text-center pic"href="https://twitter.com/ITZYOfficial" target="_blank">
+                    <img
+                        src="https://itzy.jype.com/Content/Pc/images/common/sns_twitter_b.png"
+                        class="w-75"
+                    />
+                    </a>
+                    <a  class="col text-center pic"href="https://www.facebook.com/OfficialItzy" target="_blank">
+                    <img
+                        src="https://itzy.jype.com/Content/Pc/images/common/sns_facebook_b.png"
+                        class="w-75"
+                    />
+                    </a>
+                    <a  class="col text-center pic"href="https://www.youtube.com/c/ITZY" target="_blank">
+                    <img
+                        src="https://itzy.jype.com/Content/Pc/images/common/sns_youtube_b.png"
+                        class="w-75"
+                    />
+                    </a>
+                    <a  class="col text-center pic"href="https://www.vlive.tv/channel/BAE889" target="_blank">
+                    <img
+                        src="https://itzy.jype.com/Content/Pc/images/common/sns_vlive_b.png"
+                        class="w-75"
+                    />
+                    </a>
+                    <a  class="col text-center pic"href="https://weibo.com/u/7462077750?is_all=1" target="_blank">
+                    <img
+                        src="https://itzy.jype.com/Content/Pc/images/common/sns_weibo_b.png"
+                        class="w-75"
+                    />
+                    </a>
+                    <a  class="col text-center pic"href="https://fans.jype.com/itzy" target="_blank">
+                    <img
+                        src="https://itzy.jype.com/Content/Pc/images/common/sns_fans_b.png"
+                        class="w-75"
+                    />
+                    </a>
+                    <a  class="col text-center pic"href="https://edm-wish.jype.com/" target="_blank">
+                    <img
+                        src="https://itzy.jype.com/Content/Pc/images/common/sns_edm_b.png"
+                        class="w-75"
+                    />
+                    </a>
+                    
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-content" id="62010453">
+                <div
+                    class="row m-0 w-100"
+                    style="background-color: #EFEFEF; font-family: Georgia, 'Times New Roman', Times, serif; letter-spacing: 1px;">
+                        <div class="col" style="font-size: 19px;  margin: 3%;">
+                            <h2 style="color: #FF3B3F; font-weight: bold;">
+                                Memoji
+                                <span class="spinner-grow spinner-grow text-danger"></span>
+                            </h2>
+                        <p style="text-align: justify; color: black;">
+                        Memojis are animated emojis that look like real people from Apple. Apple first released a feature called
+                        Animoji in 2017, these animated emojis were able to track your face to make it appear as if you were a
+                        talking emoji in iMessage or FaceTime. Then following this release, Apple released Memojis in 2018. In other
+                        words, Memojis are basically personalized Animojis that look like the owner of the Apple product where
+                        they’re being used.
+                        </p>
+                        <h2 style="color: #FF3B3F; font-weight: bold;">
+                            What is a Memoji?
+                            <span class="spinner-grow spinner-grow text-danger"></span>
+                        </h2>
+                        <p style="text-align: justify; color: black;">
+                        The goal of Memoji is to create an avatar that looks just like you.
+                        The Memoji builder in your Apple device lets you customize everything.
+                        Including skin tone, hair color, hairstyle, hat type, eye shape, and so much more to create a really
+                        realistic emoji. Momoji by Apple is a great feature to get users to form a stronger, more personal
+                        connection to their device. This means people will spend more time on their Apple products, which leads to
+                        increased profits for Apple—pretty smart!
+                        </p>
+                    </div>
+  
+                    <div class="col p-3" style="margin: auto; padding: 0%; margin-right: 20px; ;">
+                        <img
+                            class="w-100"
+                            src="https://image.shutterstock.com/image-photo/paris-france-sep-13-2017-600w-714994837.jpg">
+                        <button type="button" class="button btn "
+                            style="background-color: hsl(359, 100%, 62%, 1); color: #EFEFEF; text-align: center; width: 100%; padding: 2%; margin: auto; margin-top: 3%;">
+                            <strong
+                                style="font-family: 'Courier New', Courier, monospace; font-size: 20px; font-style: italic;">62010453
+                                Nontapan Rujirakal</strong>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-content" id="62010465">
+                <div class="maleText">
+                    <div class="rahas">
+                        <h2><i>62010465</i></h2>
+                    </div>
+                    <div class="rowed">
+                        <img src="https://cdn.discordapp.com/attachments/793757885569564702/939553535626993714/malePhotoshoped.png">
+                        <div class = "miniColumned">
+                
+                            <div class = "miniRowed">
+                                <div class = "maleT1">
+                                    <p>
+                                        <b>
+                                            <i>NARAWICH  &nbsp;<span class="spinner-grow spinner-grow text-success"></span></i><br><br>
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi consequatur
+                                            nam earum inventore unde asperiores voluptate. Accusantium atque suscipit
+                                            placeat? Doloremque fugiat quia sapiente aliquid eaque iure vel tempora?
+                                            Mollitia.
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio adipisci 
+                                            doloribus ullam recusandae eligendi dolores fugit, dolorem quisquam maiores laborum.
+                                            Quia voluptate id quos autem iusto, ratione excepturi expedita fugit.
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, numquam mollitia maiores 
+                                            ad cum omnis magni. Dolore quae enim magnam eum quis laborum, ipsam quidem, numquam quia, 
+                                            consequatur velit saepe!
+                                        </b>
+                                    </p>
+                                </div>
+                                <div class = "maleT2">
+                                    <p>
+                                        <b>
+                                            <i>YOUBUA &nbsp;<span class="spinner-grow spinner-grow text-success"></span></i><br><br>
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi consequatur
+                                            nam earum inventore unde asperiores voluptate. Accusantium atque suscipit
+                                            placeat? Doloremque fugiat quia sapiente aliquid eaque iure vel tempora?
+                                            Mollitia.
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio adipisci 
+                                            doloribus ullam recusandae eligendi dolores fugit, dolorem quisquam maiores laborum.
+                                            Quia voluptate id quos autem iusto, ratione excepturi expedita fugit.
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, numquam mollitia maiores 
+                                            ad cum omnis magni. Dolore quae enim magnam eum quis laborum, ipsam quidem, numquam quia, 
+                                            consequatur velit saepe!
+                                        </b>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div id = "maleCard" class="d-block border rounded-3 p-4 border-light" style= "background-color: rgb(1,200,1,0.1);">
+                                <b>
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed quod odio, officiis molestias blanditiis 
+                                    ducimus facere vel. Eius quod error sunt incidunt pariatur consequatur possimus officia nulla, fuga iure odit.
+                                </b>                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-content" id="62010494">
+                <div class="col-sm">
+                    <img style="height: 750px; margin-left: 25%; margin-top: 23%;" src = "https://cdn.discordapp.com/attachments/690673887687606352/939542808023433303/myself-sunmi.png"/>
+                </div>
+                <div class="col-sm" style="height: 100%;">
+                    <div class="d-flex flex-column flex-wrap justify-content-center " style="margin-top: 50%; padding-right: 10%; ">
+                        <div class="d-block border rounded-3 p-4 border-primary" style="background-color: rgb(0,0,0,0.4);">
+                            <h2 style="text-align: center;">62010494 Nitipat Boongate</h2>
+                            <h3 style="margin-left: 5%;">About Me!</h3>
+                            <p>
+                                A 3rd-year student in KMITL who is
+                                interested in Full-Stack Developer. Develops
+                                Mobile app with Flutter and Website with
+                                Javascript(Node.js, MernStack and others).
+                                Ready for Learning the new experiences and
+                                co-op working.
+                            </p>
+                            <ul style="margin-left: 5%;">
+                                <li>University : King Mongkut's Institute of Technology Ladkrabang</li>
+                                <li>Faculty : Faculty of Engineering</li>
+                                <li>Major : Computer Engineering</li>
+                                <li>Year : 3rd year</li>
+                            </ul>
+                            <div style="text-align: center; justify-content: space-between;">
+                                <button type="button" class="btn btn-outline-primary"><a href="https://www.facebook.com/belivepooh" target="_blank">Facebook</a></button>
+                                <button type="button" class="btn btn-outline-secondary"><a href="https://tasket.s3-ap-southeast-1.amazonaws.com/Student%20Resume/huEKfiQHGxYPsVpz9vucg5.pdf" target="_blank">Resume</a></button>
+                                <button type="button" class="btn btn-outline-success"><a href="https://github.com/nitipat009" target="_blank">Github</a></button>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-content" id="62010496">
+                <div class="pure-container">
+                    <div class="pure-controller-container">
+                        <div></div>
+                        <img
+                            src="https://cdn.discordapp.com/attachments/939618238898253856/939635089900462180/unknown.png"
+                            style="
+                                width: 300px;
+                                border-radius: 50%;
+                                border-color: #ffffff;
+                                border-style: solid;" />
+                        <span style="
+                                width: 300px;
+                                color: white;
+                                font-family: 'Trocchi', serif;
+                                font-size: 24px;">
+                            62010496 Nitipoom Klaynium
+                        </span>
+
+                        <div class="pure-controller">
+                            <div></div>
+                            <div>
+                                <img src="https://cdn.discordapp.com/attachments/939618238898253856/939644404602376203/unknown.png" width="100px" height="100px">
+                            </div>
+                            <div></div>
+                            <div>
+                                <img src="https://cdn.discordapp.com/attachments/939618238898253856/939644767468412938/unknown.png" width="100px" height="100px">
+                            </div>
+                            <div></div>
+                            <div>
+                                <img src="https://cdn.discordapp.com/attachments/939618238898253856/939644965179498516/unknown.png" width="100px" height="100px">
+                            </div>
+                            <div></div>
+                            <div>
+                                <img src="https://cdn.discordapp.com/attachments/939618238898253856/939645156792086638/unknown.png" width="100px" height="100px">
+                            </div>
+                            <div></div>
+                        </div>
+                    </div>
+
+                    <div class="pure-monitor">
+                        <h2>This is somethings</h2>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
