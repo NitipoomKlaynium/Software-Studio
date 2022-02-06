@@ -1243,12 +1243,26 @@
                         }
 
                         const wood_floor = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/wood-floor.png";
-
+                        const wall_top = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/wall-top.png";
+                        const wall_left = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/wall-left.png";
+                        const wall_right = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/wall-right.png";
+                        const wall_bottom = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/wall-bottom.png";
+                        const corner_1 = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/corner-1.png";
+                        const corner_2 = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/corner-2.png";
+                        const corner_3 = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/corner-3.png";
+                        const corner_4 = "";
                         
                         for (let x = 0 ; x < 15 ; x++) {
                             for (let y = 0 ; y < 15 ; y++) {
                                 tileSet[x][y].src = wood_floor;
                             }
+                        }
+
+                        for (let i = 0 ; i < 15 ; i++) {
+                            tileSet[0][i].src = wall_left;
+                            tileSet[i][0].src = wall_top;
+                            tileSet[14][i].src = wall_right;
+                            tileSet[i][14].src = wall_bottom;
                         }
                         
 
