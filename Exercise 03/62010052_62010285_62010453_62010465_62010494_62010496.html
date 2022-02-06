@@ -1233,6 +1233,17 @@
                                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                                 </span>
                             </div>
+
+                            
+                        </div>
+                        <div
+                            class="
+                                text-center"
+                            style="
+                                color:white;
+                                font-size: 40px;
+                                font-weight: bold;">
+                            Magazines are in bookshelf.
                         </div>
                     </div>
 
@@ -1260,7 +1271,23 @@
 
                         var tileSet_temp = document.getElementsByName("tile-block");
                         var tileSet = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], []];
-                        
+                        var hitBox = [
+                            ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+                            ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+                            ["X", "S", "S", "X", "S", "S", "S", "O", "O", "X", "O", "O", "O", "X", "X"],
+                            ["X", "O", "O", "O", "O", "O", "O", "O", "O", "X", "O", "O", "O", "O", "X"],
+                            ["X", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "X"],
+                            ["X", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "X"],
+                            ["X", "X", "X", "X", "X", "X", "O", "O", "O", "X", "X", "X", "X", "X", "X"],
+                            ["X", "X", "X", "X", "X", "X", "O", "O", "O", "X", "X", "X", "X", "X", "X"],
+                            ["X", "X", "X", "X", "X", "X", "O", "O", "O", "X", "X", "X", "X", "X", "X"],
+                            ["X", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "X"],
+                            ["X", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "X"],
+                            ["X", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "X"],
+                            ["X", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "X"],
+                            ["X", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "X"],
+                            ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"]];
+
                         for (let i = 0 ; i < 225 ; i++) {
                             var col = Math.floor(i % 15);
                             tileSet[col].push(tileSet_temp[i]);
@@ -1291,7 +1318,7 @@
                         const wardrobe_1_1 = src_directory + "wardrobe-1-1.png";
                         const wardrobe_1_2 = src_directory + "wardrobe-1-2.png";
                         const wallpaper_white = src_directory + "wallpaper-white.png";
-                        const wallpaper_white_bottom = src_directory + "wallpaper-white-bottom.png";
+                        const wallpaper_white_bottom = src_directory + "wallpaper-white-bottom-1.png";
                         const wall_left_right = src_directory + "wall_left_right.png";
                         const corner_9 = src_directory + "corner-9.png";
                         const corner_10 = src_directory + "corner-10.png";
@@ -1340,6 +1367,14 @@
                         tileSet[13][2].src = bed_1;
                         tileSet[13][3].src = bed_2;
 
+                        tileSet[10][1].src = wallpaper_white;
+                        tileSet[10][2].src = wallpaper_white_bottom;
+                        tileSet[11][1].src = wallpaper_white;
+                        tileSet[11][2].src = wallpaper_white_bottom;
+                        tileSet[12][1].src = wallpaper_white;
+                        tileSet[12][2].src = wallpaper_white_bottom;
+                        tileSet[13][1].src = wallpaper_white;
+
 
                         tileSet[9][0].src = corner_9;
                         tileSet[9][1].src = wall_left_right;
@@ -1361,6 +1396,18 @@
                         tileSet[4][7].src = wall_top;
                         tileSet[5][7].src = corner_8;
 
+                        tileSet[1][8].src = wallpaper_white;
+                        tileSet[2][8].src = wallpaper_white;
+                        tileSet[3][8].src = wallpaper_white;
+                        tileSet[4][8].src = wallpaper_white;
+                        tileSet[5][8].src = wallpaper_white;
+
+                        tileSet[1][9].src = wallpaper_white_bottom;
+                        tileSet[2][9].src = wallpaper_white_bottom;
+                        tileSet[3][9].src = wallpaper_white_bottom;
+                        tileSet[4][9].src = wallpaper_white_bottom;
+                        tileSet[5][9].src = wallpaper_white_bottom;
+
                         tileSet[9][6].src = corner_5;
                         tileSet[10][6].src = wall_bottom;
                         tileSet[11][6].src = wall_bottom;
@@ -1375,13 +1422,23 @@
                         tileSet[13][7].src = wall_top;
                         tileSet[14][7].src = corner_2;
 
-                        
+                        tileSet[9][8].src = wallpaper_white;
+                        tileSet[10][8].src = wallpaper_white;
+                        tileSet[11][8].src = wallpaper_white;
+                        tileSet[12][8].src = wallpaper_white;
+                        tileSet[13][8].src = wallpaper_white;
 
-                        
-                        
+                        tileSet[9][9].src = wallpaper_white_bottom;
+                        tileSet[10][9].src = wallpaper_white_bottom;
+                        tileSet[11][9].src = wallpaper_white_bottom;
+                        tileSet[12][9].src = wallpaper_white_bottom;
+                        tileSet[13][9].src = wallpaper_white_bottom;
 
                         var pos_x = 7;
                         var pos_y = 7;
+
+                        var face_x = 0;
+                        var face_y = 1;
 
                         var x_time = getTime();
                         var y_time = getTime();
@@ -1406,39 +1463,64 @@
                             var new_y_time = getTime(); 
                             var kc = e.keyCode;
 
-                            if (new_x_time - x_time >= 500) {
-                                x_time = new_x_time;
-                                if (kc === 65) {
-                                    setTimeout(function() {document.getElementById("character-sprite").src = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/stand-left.png";}, 500);
-                                    document.getElementById("character-sprite").src = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/walk-left.gif";
-                                    move(-1, 0);                                    
+                            if (isText_boxOpen === false) {
+                                if (new_x_time - x_time >= 500) {
+                                    x_time = new_x_time;
+                                    if (kc === 65) {
+                                        face_y = 0;
+                                        face_x = -1;
+                                        setTimeout(function() {document.getElementById("character-sprite").src = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/stand-left.png";}, 400);
+                                        document.getElementById("character-sprite").src = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/walk-left.gif";
+                                        if (hitBox[pos_y][pos_x - 1] === "O") {
+                                            move(-1, 0);                           
+                                        }         
+                                    }
+                                    if (kc === 68) {
+                                        face_y = 0;
+                                        face_x = 1;
+                                        setTimeout(function() {document.getElementById("character-sprite").src = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/stand-right.png";}, 400);
+                                        document.getElementById("character-sprite").src = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/walk-right.gif";
+                                        if (hitBox[pos_y][pos_x + 1] === "O") {
+                                            move(1, 0);
+                                        }
+                                    }
                                 }
-                                if (kc === 68) {
-                                    setTimeout(function() {document.getElementById("character-sprite").src = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/stand-right.png";}, 500);
-                                    document.getElementById("character-sprite").src = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/walk-right.gif";
-                                    move(1, 0);
+                                if (new_y_time - y_time >= 500) {
+                                    y_time = new_y_time;
+                                    if (kc === 87) {
+                                        face_y = -1;
+                                        face_x = 0;
+                                        setTimeout(function() {document.getElementById("character-sprite").src = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/stand-up.png";}, 400);
+                                        document.getElementById("character-sprite").src = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/walk-up.gif";
+                                        if (hitBox[pos_y - 1][pos_x] === "O") {
+                                            move(0, -1);
+                                        }
+                                    }
+                                    
+                                    if (kc === 83) {
+                                        face_y = 1;
+                                        face_x = 0;
+                                        setTimeout(function() {document.getElementById("character-sprite").src = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/stand-down.png";}, 400);
+                                        document.getElementById("character-sprite").src = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/walk-down.gif";
+                                        if (hitBox[pos_y + 1][pos_x] === "O") {
+                                            move(0, 1);
+                                        }
+                                    }
                                 }
                             }
-                            if (new_y_time - y_time >= 500) {
-                                y_time = new_y_time;
-                                if (kc === 87) {
-                                    setTimeout(function() {document.getElementById("character-sprite").src = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/stand-up.png";}, 500);
-                                    document.getElementById("character-sprite").src = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/walk-up.gif";
-                                    move(0, -1);
-                                }
-                                
-                                if (kc === 83) {
-                                    setTimeout(function() {document.getElementById("character-sprite").src = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/stand-down.png";}, 500);
-                                    document.getElementById("character-sprite").src = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/walk-down.gif";
-                                    move(0, 1);
-                                }
-                            }
+
                             if (kc === 75) {
+                                console.log(hitBox[pos_y + face_y][pos_x + face_x]);
                                 if (isText_boxOpen) {
                                     document.getElementById("pure-text-box").style.opacity = "0";
                                     isText_boxOpen = false;
+                                    console.log(isText_boxOpen);
                                 }
-                            }
+                                else if (hitBox[pos_y + face_y][pos_x + face_x] === "S") {
+                                    document.getElementById("pure-text-box").style.opacity = "1";
+                                    isText_boxOpen = true;
+                                }
+                            }                            
                         };
 
                         document.getElementById("pure-text-box").style.opacity = "0";
