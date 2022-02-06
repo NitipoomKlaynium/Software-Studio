@@ -350,9 +350,6 @@
                 position: relative;
                 min-width: 720px;
                 min-height: 720px;
-                border-color: rgb(9, 255, 0);
-                border-width: 2px;
-                border-style: solid;
                 z-index: 0;
             }
 
@@ -364,9 +361,6 @@
                 overflow: hidden;
             }
 
-            .pure-map img {
-            }
-
             .pure-character {
                 max-width: 48px;
                 max-height: 48px;
@@ -375,6 +369,30 @@
 
 
                 transition: all 0.5s linear;
+            }
+
+            .pure-text-box {     
+                max-width: 600px;
+                max-height: 160px;
+                margin-left: 60px;
+                margin-top: 500px;
+                padding: 15px;
+                position: absolute;
+                color: wheat;
+                background-color: rgba(194, 194, 194, 0.2);
+                color: rgb(255, 255, 255);
+                border-radius: 4%;
+                border-color: rgb(194, 103, 0);
+                border-width: 2px;
+                border-style: solid;
+                transition: opacity 0.3s ease-out;
+            }
+
+            .pure-text-box span {     
+
+                
+                
+                
             }
 
         </style>
@@ -1209,6 +1227,12 @@
                             <div class="pure-character" id="pure-player">
                                 <img src="https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/stand-down.png" id="character-sprite" width="48px" height="48px">
                             </div>
+
+                            <div class="pure-text-box" id="pure-text-box">
+                                <span>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                                </span>
+                            </div>
                         </div>
                     </div>
 
@@ -1251,6 +1275,10 @@
                         const corner_2 = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/corner-2.png";
                         const corner_3 = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/corner-3.png";
                         const corner_4 = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/corner-4.png";
+                        const large_bookshelf_1 = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/large_book_shelf-1.png";
+                        const large_bookshelf_2 = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/large_book_shelf-2.png";
+                        const large_bookshelf_3 = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/large_book_shelf-3.png";
+                        const large_bookshelf_4 = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/large_book_shelf-4.png";
                         
                         for (let x = 0 ; x < 15 ; x++) {
                             for (let y = 0 ; y < 15 ; y++) {
@@ -1270,11 +1298,23 @@
                         tileSet[0][14].src = corner_3;
                         tileSet[14][14].src = corner_4;
 
+                        tileSet[1][1].src = large_bookshelf_1;
+                        tileSet[2][1].src = large_bookshelf_2;
+                        tileSet[1][2].src = large_bookshelf_3;
+                        tileSet[2][2].src = large_bookshelf_4;
+
+                        tileSet[5][1].src = large_bookshelf_1;
+                        tileSet[6][1].src = large_bookshelf_2;
+                        tileSet[5][2].src = large_bookshelf_3;
+                        tileSet[6][2].src = large_bookshelf_4;
+
                         var pos_x = 7;
                         var pos_y = 7;
 
                         var x_time = getTime();
                         var y_time = getTime();
+
+                        var isText_boxOpen = false;
                         
                         function move(x, y) {
                             if (pos_x + x >= 0 && pos_x + x <= 14) {
@@ -1322,10 +1362,14 @@
                                 }
                             }
                             if (kc === 75) {
-                                console.log("inspect");
+                                if (isText_boxOpen) {
+                                    document.getElementById("pure-text-box").style.opacity = "0";
+                                    isText_boxOpen = false;
+                                }
                             }
                         };
 
+                        document.getElementById("pure-text-box").style.opacity = "0";
                         
                     </script>
                 </div>
