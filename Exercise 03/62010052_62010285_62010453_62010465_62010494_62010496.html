@@ -1266,21 +1266,25 @@
                             tileSet[col].push(tileSet_temp[i]);
                         }
 
-                        const wood_floor = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/wood-floor.png";
-                        const wall_top = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/wall-top.png";
-                        const wall_left = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/wall-left.png";
-                        const wall_right = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/wall-right.png";
-                        const wall_bottom = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/wall-bottom.png";
-                        const corner_1 = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/corner-1.png";
-                        const corner_2 = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/corner-2.png";
-                        const corner_3 = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/corner-3.png";
-                        const corner_4 = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/corner-4.png";
-                        const large_bookshelf_1 = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/large_book_shelf-1.png";
-                        const large_bookshelf_2 = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/large_book_shelf-2.png";
-                        const large_bookshelf_3 = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/large_book_shelf-3.png";
-                        const large_bookshelf_4 = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/large_book_shelf-4.png";
-                        const bookshelf_1 = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/book-shelf-1.png";
-                        const bookshelf_2 = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/book-shelf-2.png";
+                        const src_directory = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/";
+
+                        const wood_floor = src_directory + "wood-floor.png";
+                        const wall_top = src_directory + "wall-top.png";
+                        const wall_left = src_directory + "wall-left.png";
+                        const wall_right = src_directory + "wall-right.png";
+                        const wall_bottom = src_directory + "wall-bottom.png";
+                        const corner_1 = src_directory + "corner-1.png";
+                        const corner_2 = src_directory + "corner-2.png";
+                        const corner_3 = src_directory + "corner-3.png";
+                        const corner_4 = src_directory + "corner-4.png";
+                        const large_bookshelf_1 = src_directory + "large_book_shelf-1.png";
+                        const large_bookshelf_2 = src_directory + "large_book_shelf-2.png";
+                        const large_bookshelf_3 = src_directory + "large_book_shelf-3.png";
+                        const large_bookshelf_4 = src_directory + "large_book_shelf-4.png";
+                        const bookshelf_1 = src_directory + "book-shelf-1.png";
+                        const bookshelf_2 = src_directory + "book-shelf-2.png";
+                        const wardrobe_1_1 = src_directory + "wardrobe-1-1.png";
+                        const wardrobe_1_2 = src_directory + "wardrobe-1-2.png";
                         
                         for (let x = 0 ; x < 15 ; x++) {
                             for (let y = 0 ; y < 15 ; y++) {
@@ -1305,6 +1309,9 @@
                         tileSet[1][2].src = large_bookshelf_3;
                         tileSet[2][2].src = large_bookshelf_4;
 
+                        tileSet[3][1].src = wardrobe_1_1;
+                        tileSet[3][2].src = wardrobe_1_2;
+
                         tileSet[4][1].src = bookshelf_1;
                         tileSet[4][2].src = bookshelf_2;
 
@@ -1312,6 +1319,21 @@
                         tileSet[6][1].src = large_bookshelf_2;
                         tileSet[5][2].src = large_bookshelf_3;
                         tileSet[6][2].src = large_bookshelf_4;
+
+                        tileSet[0][6].src = corner_3;
+                        tileSet[1][6].src = wall_bottom;
+                        tileSet[2][6].src = wall_bottom;
+                        tileSet[3][6].src = wall_bottom;
+                        tileSet[4][6].src = wall_bottom;
+                        tileSet[5][6].src = corner_4;
+
+                        tileSet[0][7].src = corner_1;
+
+                        tileSet[14][6].src = corner_4;
+                        tileSet[14][7].src = corner_2;
+
+                        
+                        
 
                         var pos_x = 7;
                         var pos_y = 7;
