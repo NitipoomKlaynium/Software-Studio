@@ -1250,7 +1250,7 @@
                         const corner_1 = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/corner-1.png";
                         const corner_2 = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/corner-2.png";
                         const corner_3 = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/corner-3.png";
-                        const corner_4 = "";
+                        const corner_4 = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/corner-4.png";
                         
                         for (let x = 0 ; x < 15 ; x++) {
                             for (let y = 0 ; y < 15 ; y++) {
@@ -1265,7 +1265,10 @@
                             tileSet[i][14].src = wall_bottom;
                         }
                         
-
+                        tileSet[0][0] = corner_1;
+                        tileSet[14][0] = corner_2;
+                        tileSet[0][14] = corner_3;
+                        tileSet[14][14] = corner_4;
 
                         var pos_x = 7;
                         var pos_y = 7;
