@@ -362,7 +362,7 @@
                 background-color: rgba(194, 194, 194, 0.2);
                 color: rgb(255, 255, 255);
                 border-radius: 4%;
-                border-color: rgb(194, 103, 0);
+                border-color: rgb(255, 255, 255);
                 border-width: 2px;
                 border-style: solid;
                 transition: opacity 0.3s ease-out;
@@ -1254,15 +1254,15 @@
                         var tileSet = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], []];
                         var hitBox = [
                             ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-                            ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
-                            ["X", "S", "S", "X", "S", "S", "S", "O", "O", "X", "O", "O", "O", "X", "X"],
+                            ["X", "S", "S", "X", "S", "S", "S", "X", "X", "X", "S", "X", "X", "X", "X"],
+                            ["X", "S", "S", "X", "S", "S", "S", "O", "O", "X", "S", "X", "O", "X", "X"],
                             ["X", "O", "O", "O", "O", "O", "O", "O", "O", "X", "O", "O", "O", "O", "X"],
                             ["X", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "X"],
                             ["X", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "X"],
                             ["X", "X", "X", "X", "X", "X", "O", "O", "O", "X", "X", "X", "X", "X", "X"],
                             ["X", "X", "X", "X", "X", "X", "O", "O", "O", "X", "X", "X", "X", "X", "X"],
-                            ["X", "X", "X", "X", "X", "X", "O", "O", "O", "X", "X", "X", "X", "X", "X"],
-                            ["X", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "X"],
+                            ["X", "X", "X", "X", "X", "X", "O", "O", "O", "X", "X", "S", "S", "X", "X"],
+                            ["X", "O", "O", "O", "O", "O", "O", "O", "O", "O", "X", "S", "S", "X", "X"],
                             ["X", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "X"],
                             ["X", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "X"],
                             ["X", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "X"],
@@ -1307,6 +1307,10 @@
                         const bed_2 = src_directory + "bed-2.png";
                         const medicine_cabinet_1 = src_directory + "medicine-cabinet-1.png";
                         const medicine_cabinet_2 = src_directory + "medicine-cabinet-2.png";
+                        const crate_1 = src_directory + "crate-1.png";
+                        const crate_2 = src_directory + "crate-2.png";
+                        const large_crate_1 = src_directory + "large-crate-1.png";
+                        const large_crate_2 = src_directory + "large-crate-2.png";
                         
                         for (let x = 0 ; x < 15 ; x++) {
                             for (let y = 0 ; y < 15 ; y++) {
@@ -1358,7 +1362,11 @@
                         tileSet[12][1].src = wallpaper_white;
                         tileSet[12][2].src = wallpaper_white_bottom;
                         tileSet[13][1].src = wallpaper_white;
-
+                        
+                        tileSet[1][5].src = crate_1;
+                        tileSet[1][4].src = crate_1;
+                        tileSet[2][5].src = crate_1;
+                        tileSet[3][5].src = crate_2;
 
                         tileSet[9][0].src = corner_9;
                         tileSet[9][1].src = wall_left_right;
@@ -1400,24 +1408,25 @@
                         tileSet[14][6].src = corner_4;
 
                         tileSet[9][7].src = corner_7;
-                        tileSet[10][7].src = wall_top;
                         tileSet[11][7].src = wall_top;
                         tileSet[12][7].src = wall_top;
                         tileSet[13][7].src = wall_top;
                         tileSet[14][7].src = corner_2;
 
                         tileSet[9][8].src = wallpaper_white;
-                        tileSet[10][8].src = wallpaper_white;
-                        tileSet[11][8].src = wallpaper_white;
-                        tileSet[12][8].src = wallpaper_white;
 
                         tileSet[9][9].src = wallpaper_white_bottom;
-                        tileSet[10][9].src = wallpaper_white_bottom;
-                        tileSet[11][9].src = wallpaper_white_bottom;
-                        tileSet[12][9].src = wallpaper_white_bottom;
 
-                        tileSet[3][8] = medicine_cabinet_1
-                        tileSet[3][9] = medicine_cabinet_2;
+                        tileSet[10][8].src = wardrobe_1_1;
+                        tileSet[10][9].src = wardrobe_1_2;
+
+                        tileSet[11][8].src = large_bookshelf_1;
+                        tileSet[12][8].src = large_bookshelf_2;
+                        tileSet[11][9].src = large_bookshelf_3;
+                        tileSet[12][9].src = large_bookshelf_4;
+
+                        tileSet[13][8].src = medicine_cabinet_1;
+                        tileSet[13][9].src = medicine_cabinet_2;
 
                         var pos_x = 7;
                         var pos_y = 7;
