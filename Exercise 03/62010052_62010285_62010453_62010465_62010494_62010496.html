@@ -29,6 +29,7 @@
                 position: fixed;
                 padding: 0;
                 display: flex;
+                z-index: 9999;
             }
 
             /* Trapezoid Box Style */
@@ -300,11 +301,8 @@
             }
 
             .pure-controller-container {
-                margin: auto;
                 display: grid;
-                grid-template-rows: 40px 380px 40px 440px;
-                justify-content: center;
-                align-items: center;
+                grid-template-rows: 60px 320px 40px 440px;
 
                 background-color: rgb(37, 37, 37);
                 border-color: rgb(170, 170, 170);
@@ -315,6 +313,9 @@
             .pure-controller {
                 padding-top: 70px;
                 display: grid;
+                
+                min-width: 480px;
+
                 grid-template-columns: 100px 100px 100px;
                 grid-template-rows: 100px 100px 100px;
 
@@ -327,6 +328,61 @@
                 border-color: rgb(255, 0, 0);
                 border-style: solid;
                 border-width: 2px;
+            }
+
+            .pure-controller-button:hover {
+                cursor: pointer;
+                opacity: 0.4;
+                transition: 0.2s;
+            }
+            
+            .pure-monitor {
+                display: grid;
+                justify-content: center;
+                align-content: center;
+                
+                border-color: rgb(0, 4, 255);
+                border-style: solid;
+                border-width: 2px;
+            }
+
+            .pure-map-container {
+                position: relative;
+                min-width: 720px;
+                min-height: 720px;
+                border-color: rgb(9, 255, 0);
+                border-width: 2px;
+                border-style: solid;
+                z-index: 0;
+            }
+
+            .pure-map {
+                position: absolute;
+                display: grid;
+                grid-template-columns: 48px 48px 48px 48px 48px 48px 48px 48px 48px 48px 48px 48px 48px 48px 48px;
+                grid-template-rows: 48px 48px 48px 48px 48px 48px 48px 48px 48px 48px 48px 48px 48px 48px 48px;
+                overflow: hidden;
+            }
+
+            .pure-map img {
+                border-color: rgb(255, 0, 0);
+                border-width: 2px;
+                border-style: solid;
+            }
+
+            .pure-character {
+                max-width: 48px;
+                max-height: 48px;
+                position: absolute;
+                margin: 336px 0px 0px 336px;
+
+
+                border-color: rgb(255, 208, 0);
+                border-radius: 50%;
+                border-width: 2px;
+                border-style: solid;
+
+                transition: all 0.5s linear;
             }
 
         </style>
@@ -888,45 +944,377 @@
                 <div class="pure-container">
                     <div class="pure-controller-container">
                         <div></div>
-                        <img
-                            src="https://cdn.discordapp.com/attachments/939618238898253856/939635089900462180/unknown.png"
-                            style="
-                                width: 300px;
-                                border-radius: 50%;
-                                border-color: #ffffff;
-                                border-style: solid;" />
-                        <span style="
-                                width: 300px;
-                                color: white;
-                                font-family: 'Trocchi', serif;
-                                font-size: 24px;">
-                            62010496 Nitipoom Klaynium
-                        </span>
+                        <div class="text-center">
+                            <img
+                                src="https://cdn.discordapp.com/attachments/939618238898253856/939635089900462180/unknown.png"
+                                style="
+                                    width: 300px;
+                                    border-radius: 50%;
+                                    border-color: #ffffff;
+                                    border-style: solid;" />
+                        </div>
+                        <div class="text-center">
+                            <span style="
+                                    width: 300px;
+                                    color: white;
+                                    font-family: 'Trocchi', serif;
+                                    font-size: 24px;">
+                                62010496 Nitipoom Klaynium
+                            </span>
+                        </div>
 
-                        <div class="pure-controller">
+                        <div class="pure-controller text-center">
                             <div></div>
-                            <div>
-                                <img src="https://cdn.discordapp.com/attachments/939618238898253856/939644404602376203/unknown.png" width="100px" height="100px">
+                            <div class="pure-controller-button">
+                                <img src="https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/up.png" width="100px" height="100px">
                             </div>
                             <div></div>
-                            <div>
-                                <img src="https://cdn.discordapp.com/attachments/939618238898253856/939644767468412938/unknown.png" width="100px" height="100px">
+                            <div class="pure-controller-button">
+                                <img src="https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/right.png" width="100px" height="100px">
                             </div>
                             <div></div>
-                            <div>
-                                <img src="https://cdn.discordapp.com/attachments/939618238898253856/939644965179498516/unknown.png" width="100px" height="100px">
+                            <div class="pure-controller-button">
+                                <img src="https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/left.png" width="100px" height="100px">
                             </div>
                             <div></div>
-                            <div>
-                                <img src="https://cdn.discordapp.com/attachments/939618238898253856/939645156792086638/unknown.png" width="100px" height="100px">
+                            <div class="pure-controller-button">
+                                <img src="https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/down.png" width="100px" height="100px">
                             </div>
                             <div></div>
                         </div>
                     </div>
 
                     <div class="pure-monitor">
-                        <h2>This is somethings</h2>
+                        <div class="pure-map-container text-center">
+                            <div class="pure-map">
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                                <img width="48px" height="48px"></img>
+                            </div>
+
+                            <div class="pure-character" id="pure-player">
+
+                            </div>
+                        </div>
                     </div>
+
+                    <script>
+                        function getTime() {
+                            let ms = Date.now();
+                            return ms;
+                        }
+
+                        var pos_x = 7;
+                        var pos_y = 7;
+
+                        var x_time = getTime();
+                        var y_time = getTime();
+                        
+                        function move(x, y) {
+                            var new_x_time = getTime();
+                            var new_y_time = getTime();
+                            
+                            if (new_x_time - x_time >= 500 && pos_x + x >= 0 && pos_x + x <= 14) {
+                                x_time = new_x_time;
+                                pos_x += x;
+                                var new_marginLeft = pos_x * 48;
+                                document.getElementById("pure-player").style.marginLeft = new_marginLeft.toString() + "px";
+                            }
+                            if (new_y_time - y_time >= 500 && pos_y + y >= 0 && pos_y + y <= 14) {
+                                y_time = new_y_time;
+                                pos_y += y;
+                                var new_marginTop = pos_y * 48;
+                                document.getElementById("pure-player").style.marginTop = new_marginTop.toString() + "px";
+                            }
+                            
+                        }
+
+                        window.onkeydown = function(e) {
+                            var kc = e.keyCode;
+                            if (kc === 65) {
+                                move(-1, 0);
+                            }
+                            if (kc === 87) {
+                                move(0, -1);
+                            }
+                            if (kc === 68) {
+                                move(1, 0);
+                            }
+                            if (kc === 83) {
+                                move(0, 1);
+                            }
+                            if (kc === 75) {
+                                console.log("inspect");
+                            }
+                        };
+                    </script>
                 </div>
             </div>
 
