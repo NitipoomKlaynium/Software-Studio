@@ -365,9 +365,6 @@
             }
 
             .pure-map img {
-                border-color: rgb(255, 0, 0);
-                border-width: 2px;
-                border-style: solid;
             }
 
             .pure-character {
@@ -1245,12 +1242,16 @@
                             tileSet[col].push(tileSet_temp[i]);
                         }
 
-                        console.log(tileSet);
+                        const wood_floor = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/wood-floor.png";
+
+                        
                         for (let x = 0 ; x < 15 ; x++) {
                             for (let y = 0 ; y < 15 ; y++) {
-                                tileSet[x][y].src = "https://raw.githubusercontent.com/NitipoomKlaynium/Software-Studio/main/Exercise%2003/grass.png";
+                                tileSet[x][y].src = wood_floor;
                             }
                         }
+                        
+
 
                         var pos_x = 7;
                         var pos_y = 7;
